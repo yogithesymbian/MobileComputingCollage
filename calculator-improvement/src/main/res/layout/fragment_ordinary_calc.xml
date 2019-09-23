@@ -19,11 +19,13 @@
             android:layout_marginRight="8dp"
             android:ems="10"
             android:textSize="48sp"
-            android:background="#efefef"
+            android:background="@drawable/outline_bg_component"
             android:gravity="right|center_vertical"
             android:maxLength="12"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="RtlHardcoded"/>
+            tools:ignore="RtlHardcoded"
+            tools:text="Result"
+            />
 
     <TableLayout
             android:layout_width="match_parent"
@@ -206,7 +208,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/button"
                     android:text="."
-                    android:onClick="onDecimalPoint"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -228,7 +229,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/button"
                     android:text="CLR"
-                    android:onClick="onClear"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -256,7 +256,6 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/button"
                     android:text="="
-                    android:onClick="onEqual"
                     />
         </TableRow>
     </TableLayout>

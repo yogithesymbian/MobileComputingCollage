@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.*
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.*
 import net.objecthunter.exp4j.ExpressionBuilder
 
 
@@ -15,8 +16,6 @@ class OrdinaryCalcFragment : Fragment() {
 
 
     companion object{
-        // TextView used to display the input and output
-//        lateinit var txtInput: TextViewCompat
 
         // Represent whether the lastly pressed key is numeric or not
         var lastNumeric: Boolean = false
@@ -34,14 +33,36 @@ class OrdinaryCalcFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val inflate =  inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
-//        txtInput = inflate.findViewById<View>(R.id.txtInput)
+        inflate.apply {
+            this.btnNine.setOnClickListener{onDigit(it)}
+            this.btnEight.setOnClickListener{onDigit(it)}
+            this.btnSeven.setOnClickListener{onDigit(it)}
+            this.btnSix.setOnClickListener{onDigit(it)}
+            this.btnFive.setOnClickListener{onDigit(it)}
+            this.btnFour.setOnClickListener{onDigit(it)}
+            this.btnThree.setOnClickListener{onDigit(it)}
+            this.btnTwo.setOnClickListener{onDigit(it)}
+            this.btnOne.setOnClickListener{onDigit(it)}
+            this.btnZero.setOnClickListener{onDigit(it)}
+
+            this.btnDecimal.setOnClickListener{onDecimalPoint()}
+
+            this.btnDivide.setOnClickListener{onOperator(it)}
+            this.btnMultiply.setOnClickListener{onOperator(it)}
+            this.btnSubtract.setOnClickListener{onOperator(it)}
+            this.btnAdd.setOnClickListener{onOperator(it)}
+
+            this.btnClear.setOnClickListener{onClear() }
+            this.btnEqual.setOnClickListener{onEqual() }
+        }
+
         return inflate
     }
 
     /**
      * Append the Button.text to the TextView
      */
-    fun onDigit(view: View) {
+    private fun onDigit(view: View) {
         if (stateError) {
             // If current state is Error, replace the error message
             txtInput.text = (view as Button).text
@@ -57,7 +78,7 @@ class OrdinaryCalcFragment : Fragment() {
     /**
      * Append . to the TextView
      */
-    fun onDecimalPoint(view: View) {
+    private fun onDecimalPoint() {
         if (lastNumeric && !stateError && !lastDot) {
             txtInput.append(".")
             lastNumeric = false
@@ -68,7 +89,7 @@ class OrdinaryCalcFragment : Fragment() {
     /**
      * Append +,-,*,/ operators to the TextView
      */
-    fun onOperator(view: View) {
+    private fun onOperator(view: View) {
         if (lastNumeric && !stateError) {
             txtInput.append((view as Button).text)
             lastNumeric = false
@@ -80,7 +101,7 @@ class OrdinaryCalcFragment : Fragment() {
     /**
      * Clear the TextView
      */
-    fun onClear(view: View) {
+    private fun onClear() {
         this.txtInput.text = ""
         lastNumeric = false
         stateError = false
@@ -90,7 +111,7 @@ class OrdinaryCalcFragment : Fragment() {
     /**
      * Calculate the output using Exp4j
      */
-    fun onEqual(view: View) {
+    private fun onEqual() {
         // If the current state is error, nothing to do.
         // If the last input is a number only, solution can be found.
         if (lastNumeric && !stateError) {
@@ -105,7 +126,7 @@ class OrdinaryCalcFragment : Fragment() {
                 lastDot = true // Result contains a dot
             } catch (ex: ArithmeticException) {
                 // Display an error message
-                txtInput.text = "Error"
+                txtInput.text = getString(R.string.ordinary_calc_fragment_error)
                 stateError = true
                 lastNumeric = false
             }
