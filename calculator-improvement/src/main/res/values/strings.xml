@@ -18,4 +18,5 @@
     <string name="hello_blank_fragment">hello  world</string>
     <string name="menu_main_calc_ordinary">Ordinary</string>
     <string name="menu_main_calc_science">Science</string>
+    <string name="ordinary_calc_fragment_error">Error</string>
 </resources>
