@@ -9,5 +9,7 @@ public class MainCalculatorActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_calculator);
+		
+		// test
     }
 }
