@@ -24,6 +24,8 @@ android {
 }
 
 dependencies {
+    implementation project(path: ':common')
+    // MY SET DEFAULT DEPENDENCY ANDROIDX ARTIFACT
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -32,7 +34,7 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha05'
+    implementation 'com.google.android.material:material:1.1.0-alpha10'
     implementation 'androidx.cardview:cardview:1.0.0'
 
     testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.23.4'
@@ -43,7 +45,8 @@ dependencies {
         exclude group: 'com.android.support:27.1.1', module: 'support-annotations'
     })
     androidTestImplementation 'androidx.test.espresso:espresso-intents:3.3.0-alpha02'
+    // END OF MY SET DEFAULT DEPENDENCY ANDROIDX ARTIFACT
 
-    // KALKULATOR
+    // CALCULATOR
     implementation 'net.objecthunter:exp4j:0.4.4'
 }
