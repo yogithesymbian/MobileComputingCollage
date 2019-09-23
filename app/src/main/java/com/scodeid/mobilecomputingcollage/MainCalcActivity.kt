@@ -13,7 +13,6 @@ import com.scodeid.mobilecomputingcollage.adapter.SectionsPagerAdapter
 import kotlinx.android.synthetic.main.activity_main_calc_content.*
 
 class MainCalcActivity : AppCompatActivity() {
-//    , NavigationView.OnNavigationItemSelectedListener
     private var sectionsPagerAdapter: SectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,24 +37,6 @@ class MainCalcActivity : AppCompatActivity() {
          * END OF SET VIEW PAGER ADAPTER
          */
 
-//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-//        val toggle = ActionBarDrawerToggle(
-//            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
-//        )
-//        drawerLayout.addDrawerListener(toggle)
-//        toggle.syncState()
-
-//        val navView: NavigationView = findViewById(R.id.nav_view)
-//        navView.setNavigationItemSelectedListener(this)
-    }
-
-    override fun onBackPressed() {
-//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-//        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-//            drawerLayout.closeDrawer(GravityCompat.START)
-//        } else {
-//            super.onBackPressed()
-//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -77,30 +58,4 @@ class MainCalcActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-//        // Handle navigation view item clicks here.
-//        when (item.itemId) {
-//            R.id.nav_home -> {
-//                // Handle the camera action
-//            }
-//            R.id.nav_gallery -> {
-//
-//            }
-//            R.id.nav_slideshow -> {
-//
-//            }
-//            R.id.nav_tools -> {
-//
-//            }
-//            R.id.nav_share -> {
-//
-//            }
-//            R.id.nav_send -> {
-//
-//            }
-//        }
-//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-//        drawerLayout.closeDrawer(GravityCompat.START)
-//        return true
-//    }
 }
