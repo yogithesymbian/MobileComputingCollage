@@ -1,1 +1,1 @@
-include ':calculator-improvement', ':common'
+include ':calculator-improvement', ':common', ':calculator'
