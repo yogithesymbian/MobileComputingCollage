@@ -6,7 +6,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 
-                tools:context=".MainActivity">
+                tools:context=".MainCalculatorActivity">
 
     <TextView
             android:id="@+id/txtScreen"
@@ -19,7 +19,8 @@
             android:padding="10dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="30sp"
-            android:typeface="serif"/>
+            android:typeface="serif"
+            tools:ignore="RtlHardcoded"/>
 
     <LinearLayout
             android:layout_width="match_parent"
@@ -30,7 +31,8 @@
         <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                >
 
             <Button
                     android:background="@drawable/button"
@@ -39,7 +41,8 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnSeven"
-                    android:text="7"/>
+                    android:text="@string/activity_main_calculator_7"
+                    tools:ignore="NestedWeights"/>
 
             <Button
                     android:layout_width="0dp"
@@ -48,7 +51,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnEight"
-                    android:text="8"/>
+                    android:text="@string/activity_main_calculator_8"/>
 
             <Button
                     android:layout_width="0dp"
@@ -57,7 +60,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnNine"
-                    android:text="9"/>
+                    android:text="@string/activity_main_calculator_9"/>
 
             <Button
                     android:layout_width="0dp"
@@ -66,7 +69,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnDivide"
-                    android:text="/"/>
+                    android:text="@string/activity_main_calculator_slash"/>
         </LinearLayout>
 
         <LinearLayout
@@ -81,7 +84,8 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnFour"
-                    android:text="4"/>
+                    android:text="@string/activity_main_calculator_4"
+                    tools:ignore="NestedWeights"/>
 
             <Button
                     android:layout_width="0dp"
@@ -90,7 +94,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnFive"
-                    android:text="5"/>
+                    android:text="@string/activity_main_calculator_5"/>
 
             <Button
                     android:layout_width="0dp"

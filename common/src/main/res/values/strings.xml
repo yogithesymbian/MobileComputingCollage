@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">common</string>
+    <string name="activity_main_calculator_7">7</string>
+    <string name="activity_main_calculator_8">8</string>
+    <string name="activity_main_calculator_9">9</string>
+    <string name="activity_main_calculator_slash">/</string>
 </resources>
