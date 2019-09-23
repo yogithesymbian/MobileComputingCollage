@@ -2,10 +2,7 @@ package com.scodeid.mobilecomputingcollage
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.core.view.GravityCompat
 import android.view.MenuItem
-import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
