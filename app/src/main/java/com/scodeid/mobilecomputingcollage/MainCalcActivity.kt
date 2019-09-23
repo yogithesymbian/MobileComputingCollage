@@ -1,39 +1,51 @@
 package com.scodeid.mobilecomputingcollage
 
+import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.core.view.GravityCompat
-import androidx.appcompat.app.ActionBarDrawerToggle
 import android.view.MenuItem
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
+import com.scodeid.mobilecomputingcollage.adapter.SectionsPagerAdapter
+import kotlinx.android.synthetic.main.activity_main_calc_content.*
 
 class MainCalcActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    private var sectionsPagerAdapter: SectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_calc)
+
+        /**
+         * CUSTOM TOOLBAR
+         */
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
+        /**
+         * END OF CUSTOM TOOLBAR
+         */
 
-//        val fab: FloatingActionButton = findViewById(R.id.fab)
-//        fab.setOnClickListener { view ->
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
-//        }
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+        /**
+         * SET VIEW PAGER ADAPTER
+         */
+        sectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        container_main_calc.adapter = sectionsPagerAdapter
+        /**
+         * END OF SET VIEW PAGER ADAPTER
+         */
+
+//        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
+//        val toggle = ActionBarDrawerToggle(
+//            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
+//        )
+//        drawerLayout.addDrawerListener(toggle)
+//        toggle.syncState()
+
         val navView: NavigationView = findViewById(R.id.nav_view)
-        val toggle = ActionBarDrawerToggle(
-            this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
-        )
-        drawerLayout.addDrawerListener(toggle)
-        toggle.syncState()
-
         navView.setNavigationItemSelectedListener(this)
     }
 
@@ -57,7 +69,10 @@ class MainCalcActivity : AppCompatActivity(), NavigationView.OnNavigationItemSel
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_settings -> {
+                startActivity(Intent(this@MainCalcActivity, AboutActivity::class.java))
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }

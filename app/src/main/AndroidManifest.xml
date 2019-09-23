@@ -11,17 +11,26 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-
+        <activity
+                android:name=".AboutActivity"
+                android:parentActivityName=".MainCalcActivity"
+                android:theme="@style/AppTheme"
+                >
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".MainCalcActivity"/>
+        </activity>
         <activity
                 android:name=".MainCalcActivity"
                 android:label="@string/title_activity_main_calc"
+                android:launchMode="singleTop"
                 android:theme="@style/AppTheme.NoActionBar">
 
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
 
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
 
         </activity>
     </application>
