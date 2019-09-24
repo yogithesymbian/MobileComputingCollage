@@ -4,4 +4,23 @@
     <string name="activity_main_calculator_8">8</string>
     <string name="activity_main_calculator_9">9</string>
     <string name="activity_main_calculator_slash">/</string>
+
+    <string name="activity_main_calculator_4">4</string>
+    <string name="activity_main_calculator_5">5</string>
+    <string name="fragment_ordinary_calc_4">4</string>
+    <string name="fragment_science_calc_kur_1">(</string>
+    <string name="fragment_ordinary_calc_5">5</string>
+    <string name="fragment_ordinary_calc_6">6</string>
+    <string name="fragment_ordinary_calc_multiply">*</string>
+    <string name="fragment_ordinary_calc_1">1</string>
+    <string name="fragment_ordinary_calc_2">2</string>
+    <string name="fragment_ordinary_calc_3">3</string>
+    <string name="fragment_ordinary_calc_substract">-</string>
+    <string name="fragment_ordinary_calc_dot">.</string>
+    <string name="fragment_ordinary_calc_0">0</string>
+    <string name="fragment_ordinary_calc_ac">AC</string>
+    <string name="fragment_ordinary_calc_add">+</string>
+    <string name="fragment_ordinary_calc_equal">=</string>
+    <string name="fragment_science_calc_kur_2">)</string>
+    <string name="fragment_science_calc_percent"> % </string>
 </resources>

@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.scodeid.mobilecomputingcollage.OrdinaryCalcFragment
+import com.scodeid.mobilecomputingcollage.ScienceCalcFragment
 
 /**
  * @author
@@ -30,7 +31,7 @@ class SectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
                 OrdinaryCalcFragment()
             }
             1 -> {
-                OrdinaryCalcFragment()
+                ScienceCalcFragment()
             }
             else -> OrdinaryCalcFragment()
         }

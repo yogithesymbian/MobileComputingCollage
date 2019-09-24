@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".OrdinaryCalcFragment"
+        tools:context=".ScienceCalcFragment"
         >
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -17,9 +17,9 @@
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginRight="8dp"
-            android:background="@drawable/outline_bg_component"
             android:ems="10"
             android:textSize="48sp"
+            android:background="@drawable/outline_bg_component"
             android:gravity="right|center_vertical"
             android:maxLength="12"
             app:layout_constraintTop_toTopOf="parent"
@@ -39,9 +39,64 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_result"
-            >
+            tools:visibility="visible"
+            android:id="@+id/tableLayout"
+            app:layout_constraintTop_toBottomOf="@+id/txt_result">
 
+        <!--science added-->
+        <TableRow
+                android:id="@+id/tbl_r_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kur_1"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/fragment_science_calc_kur_1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kur_2"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/fragment_science_calc_kur_2"
+                    android:background="@drawable/button"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_percent"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/fragment_science_calc_percent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ac"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Z"
+                    android:background="@drawable/button"
+                    />
+
+        </TableRow>
+
+
+        <!-- ordinary -->
         <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -52,10 +107,11 @@
                     android:id="@+id/btn_7"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/activity_main_calculator_7"
-                    android:textSize="22sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="match_parent"
+                    android:background="@drawable/button"
+                    />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_8"
@@ -64,17 +120,17 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_8"
-                    android:textSize="22sp"
+                    android:background="@drawable/button"
                     />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_9"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/activity_main_calculator_9"
-                    android:textSize="22sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -84,8 +140,9 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_slash"
-                    android:textSize="22sp"
+                    android:background="@drawable/button"
                     />
+
         </TableRow>
 
         <TableRow
@@ -101,7 +158,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_4"
-                    android:textSize="22sp"
+                    android:background="@drawable/button"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -110,8 +167,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_5"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -120,18 +177,18 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_6"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_multiply"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/fragment_ordinary_calc_multiply"
-                    android:textSize="22sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     />
         </TableRow>
 
@@ -147,8 +204,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_1"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -157,8 +214,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_2"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -168,7 +225,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_3"
-                    android:textSize="22sp"
+                    android:background="@drawable/button"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -177,8 +234,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_substract"
-                    android:textSize="22sp"
                     />
         </TableRow>
 
@@ -194,8 +251,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_dot"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -204,8 +261,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_0"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -214,8 +271,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_ac"
-                    android:textSize="22sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -224,40 +281,28 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_add"
-                    android:textSize="22sp"
                     />
         </TableRow>
 
         <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:gravity="center">
-
-
-
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_science"
-                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    app:icon="@drawable/ic_zoom_out_map_black_24dp"
-                    app:iconSize="40dp"
-                    app:iconGravity="textStart"
-                    />
+                android:layout_weight="1">
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_equal"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:background="@drawable/button"
                     android:text="@string/fragment_ordinary_calc_equal"
-                    android:textSize="40sp"
                     />
         </TableRow>
+
     </TableLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
