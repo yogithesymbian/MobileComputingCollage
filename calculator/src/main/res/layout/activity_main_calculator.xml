@@ -7,7 +7,7 @@
                 android:layout_height="match_parent"
 
                 tools:context=".MainCalculatorActivity">
-
+<!--tes-->
     <TextView
             android:id="@+id/txtScreen"
             android:layout_width="match_parent"
