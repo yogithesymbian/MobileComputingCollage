@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import com.scodeid.common.debug
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.*
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.*
 import net.objecthunter.exp4j.ExpressionBuilder
@@ -16,7 +17,7 @@ class OrdinaryCalcFragment : Fragment() {
 
 
     companion object{
-
+        val TAG_LOG = OrdinaryCalcFragment::class.java.simpleName
         // Represent whether the lastly pressed key is numeric or not
         var lastNumeric: Boolean = false
 
@@ -25,7 +26,10 @@ class OrdinaryCalcFragment : Fragment() {
 
         // If true, do not allow to add another DOT
         var lastDot: Boolean = false
+
+        var STATE_SCIENCE : Boolean = false
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +38,8 @@ class OrdinaryCalcFragment : Fragment() {
         // Inflate the layout for this fragment
         val inflate =  inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
         inflate.apply {
+
+            // ORDINARY
             this.btn_9.setOnClickListener{onDigit(it)}
             this.btn_8.setOnClickListener{onDigit(it)}
             this.btn_7.setOnClickListener{onDigit(it)}
@@ -45,6 +51,8 @@ class OrdinaryCalcFragment : Fragment() {
             this.btn_1.setOnClickListener{onDigit(it)}
             this.btn_zero.setOnClickListener{onDigit(it)}
 
+
+
             this.btn_decimal.setOnClickListener{onDecimalPoint()}
 
             this.btn_divide.setOnClickListener{onOperator(it)}
@@ -54,6 +62,31 @@ class OrdinaryCalcFragment : Fragment() {
 
             this.btn_clear.setOnClickListener{onClear() }
             this.btn_equal.setOnClickListener{onEqual() }
+
+
+            // SCIENCE
+            this.btn_kur_1.setOnClickListener { onDigit(it) }
+            this.btn_kur_2.setOnClickListener { onDigit(it) }
+
+            this.btn_sin.setOnClickListener { onDigit(it) }
+            this.btn_cos.setOnClickListener { onDigit(it) }
+            this.btn_tan.setOnClickListener { onDigit(it) }
+
+            this.btn_percent.setOnClickListener { onDigit(it) }
+
+            this.btn_science.setOnClickListener{
+
+                debug(TAG_LOG, "click btn science calculator mode")
+                if (STATE_SCIENCE){
+                    inflate.tbl_r_1.visibility = View.GONE
+                    inflate.tbl_r_2.visibility = View.GONE
+                    STATE_SCIENCE = false
+                } else {
+                    inflate.tbl_r_1.visibility = View.VISIBLE
+                    inflate.tbl_r_2.visibility = View.VISIBLE
+                    STATE_SCIENCE = true
+                }
+            }
         }
 
         return inflate

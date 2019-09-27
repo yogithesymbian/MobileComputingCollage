@@ -1,26 +1,37 @@
 <resources>
     <string name="app_name">common</string>
+
+    <string name="activity_main_calculator_1">1</string>
+    <string name="activity_main_calculator_2">2</string>
+    <string name="activity_main_calculator_3">3</string>
+    <string name="activity_main_calculator_4">4</string>
+    <string name="activity_main_calculator_5">5</string>
+    <string name="activity_main_calculator_6">6</string>
     <string name="activity_main_calculator_7">7</string>
     <string name="activity_main_calculator_8">8</string>
     <string name="activity_main_calculator_9">9</string>
+
     <string name="activity_main_calculator_slash">/</string>
 
-    <string name="activity_main_calculator_4">4</string>
-    <string name="activity_main_calculator_5">5</string>
-    <string name="fragment_ordinary_calc_4">4</string>
-    <string name="fragment_science_calc_kur_1">(</string>
-    <string name="fragment_ordinary_calc_5">5</string>
-    <string name="fragment_ordinary_calc_6">6</string>
     <string name="fragment_ordinary_calc_multiply">*</string>
-    <string name="fragment_ordinary_calc_1">1</string>
-    <string name="fragment_ordinary_calc_2">2</string>
-    <string name="fragment_ordinary_calc_3">3</string>
     <string name="fragment_ordinary_calc_substract">-</string>
     <string name="fragment_ordinary_calc_dot">.</string>
     <string name="fragment_ordinary_calc_0">0</string>
     <string name="fragment_ordinary_calc_ac">AC</string>
     <string name="fragment_ordinary_calc_add">+</string>
     <string name="fragment_ordinary_calc_equal">=</string>
-    <string name="fragment_science_calc_kur_2">)</string>
-    <string name="fragment_science_calc_percent"> % </string>
+    <string name="fragment_ordinary_calc_log">log(</string>
+
+    <string name="fragment_ordinary_calc_kur_1">(</string>
+    <string name="fragment_ordinary_calc_kur_2">)</string>
+    <string name="fragment_ordinary_calc_percent"> % </string>
+    <string name="fragment_ordinary_calc_sin">Sin(</string>
+    <string name="fragment_ordinary_calc_cos">Cos(</string>
+
+    <string name="hello_blank_fragment">hello  world</string>
+
+    <string name="menu_main_calc_ordinary">Ordinary</string>
+    <string name="menu_main_calc_science">Science</string>
+
+    <string name="ordinary_calc_fragment_error">Error</string>
 </resources>

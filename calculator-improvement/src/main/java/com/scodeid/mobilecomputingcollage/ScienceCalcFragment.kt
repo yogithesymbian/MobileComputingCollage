@@ -19,10 +19,6 @@ class ScienceCalcFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_science_calc, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        view.tbl_r_1.visibility = View.VISIBLE
-    }
 
 
 }

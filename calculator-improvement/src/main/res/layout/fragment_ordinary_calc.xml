@@ -9,6 +9,7 @@
         tools:context=".OrdinaryCalcFragment"
         >
 
+
     <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txt_result"
             android:layout_width="match_parent"
@@ -18,13 +19,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginRight="8dp"
             android:background="@drawable/outline_bg_component"
-            android:ems="10"
-            android:textSize="48sp"
+            android:textSize="40sp"
             android:gravity="right|center_vertical"
-            android:maxLength="12"
+            android:scrollHorizontally="true"
+            android:maxLines="1"
+            android:maxLength="16"
+            app:autoSizeTextType="uniform"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RtlHardcoded"
-            tools:text="Result"
+            tools:text="1234567890123456"
             />
 
     <TableLayout
@@ -41,6 +44,105 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_result"
             >
+
+
+        <TableRow
+                android:id="@+id/tbl_r_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_deg"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/fragment_ordinary_calc_log"
+                    android:textAllCaps="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sin"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/fragment_ordinary_calc_sin"
+                    android:textAllCaps="false"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_cos"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:textAllCaps="false"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/fragment_ordinary_calc_cos"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_tan"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Tan"
+                    android:textAllCaps="false"
+                    />
+
+        </TableRow>
+
+        <TableRow
+                android:id="@+id/tbl_r_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:visibility="gone"
+                >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kur_1"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/fragment_ordinary_calc_kur_1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_kur_2"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/fragment_ordinary_calc_kur_2"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_percent"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/fragment_ordinary_calc_percent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    />
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ac"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="Z"
+                    />
+
+        </TableRow>
 
         <TableRow
                 android:layout_width="match_parent"
@@ -100,7 +202,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_4"
+                    android:text="@string/activity_main_calculator_4"
                     android:textSize="22sp"
                     />
 
@@ -110,7 +212,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_5"
+                    android:text="@string/activity_main_calculator_5"
                     android:textSize="22sp"
                     />
 
@@ -120,7 +222,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_6"
+                    android:text="@string/activity_main_calculator_6"
                     android:textSize="22sp"
                     />
 
@@ -147,7 +249,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_1"
+                    android:text="@string/activity_main_calculator_1"
                     android:textSize="22sp"
                     />
 
@@ -157,7 +259,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_2"
+                    android:text="@string/activity_main_calculator_2"
                     android:textSize="22sp"
                     />
 
@@ -167,7 +269,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="@string/fragment_ordinary_calc_3"
+                    android:text="@string/activity_main_calculator_3"
                     android:textSize="22sp"
                     />
 
