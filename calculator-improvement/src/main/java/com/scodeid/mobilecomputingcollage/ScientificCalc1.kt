@@ -23,12 +23,13 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ScientificCal1 : AppCompatActivity() {
 
-    private var e1: EditText? = null
-    private var e2: EditText? = null
+    private var e1: TextView? = null
+    private var e2: TextView? = null
     private var count = 0
     private var expression = ""
     private var text = ""
@@ -50,26 +51,26 @@ class ScientificCal1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_science_calc)
+        setContentView(R.layout.activity_main_calc_science)
 //        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
 //        setSupportActionBar(toolbar)
 
-        e1 = findViewById<View>(R.id.editText) as EditText
-        e2 = findViewById<View>(R.id.editText2) as EditText
-        mode = findViewById<View>(R.id.mode) as Button
-        toggle = findViewById<View>(R.id.toggle) as Button
-        square = findViewById<View>(R.id.square) as Button
-        xpowy = findViewById<View>(R.id.xpowy) as Button
-        log = findViewById<View>(R.id.log) as Button
-        sin = findViewById<View>(R.id.sin) as Button
-        cos = findViewById<View>(R.id.cos) as Button
-        tan = findViewById<View>(R.id.tan) as Button
-        sqrt = findViewById<View>(R.id.sqrt) as Button
-        fact = findViewById<View>(R.id.factorial) as Button
+        e1 = findViewById<View>(R.id.edt_result_1) as TextView
+        e2 = findViewById<View>(R.id.edt_result_2) as TextView
+        mode = findViewById<View>(R.id.btn_mode) as Button
+        toggle = findViewById<View>(R.id.btn_toggle) as Button
+        square = findViewById<View>(R.id.btn_square) as Button
+        xpowy = findViewById<View>(R.id.btn_xpowy) as Button
+        log = findViewById<View>(R.id.btn_log) as Button
+        sin = findViewById<View>(R.id.btn_sin) as Button
+        cos = findViewById<View>(R.id.btn_cos) as Button
+        tan = findViewById<View>(R.id.btn_tan) as Button
+        sqrt = findViewById<View>(R.id.btn_sqrt) as Button
+        fact = findViewById<View>(R.id.btn_factorial) as Button
 
 //        dbHelper = DBHelper(this)
 
-        e2!!.setText("0")
+        e2!!.text = "0"
 
         //tags to change the mode from degree to radian and vice versa
         mode!!.tag = 1
@@ -83,7 +84,7 @@ class ScientificCal1 : AppCompatActivity() {
         angleMode = mode!!.tag as Int
         when (v.id) {
 
-            R.id.toggle ->
+            R.id.btn_toggle ->
                 //change the button text if switch button is clicked
                 when (toggleMode) {
                     1 -> {
@@ -118,7 +119,7 @@ class ScientificCal1 : AppCompatActivity() {
                     }
                 }
 
-            R.id.mode ->
+            R.id.btn_mode ->
                 //change the angle property for trignometric operations if mode button is clicked
                 if (angleMode == 1) {
                     mode!!.tag = 2
@@ -128,42 +129,42 @@ class ScientificCal1 : AppCompatActivity() {
                     mode!!.setText(R.string.mode1)
                 }
 
-            R.id.num0 -> e2!!.setText(e2!!.text.toString() + "0")
+            R.id.btn_num0 -> e2!!.setText(e2!!.text.toString() + "0")
 
-            R.id.num1 -> e2!!.setText(e2!!.text.toString() + "1")
+            R.id.btn_num1 -> e2!!.setText(e2!!.text.toString() + "1")
 
-            R.id.num2 -> e2!!.setText(e2!!.text.toString() + "2")
+            R.id.btn_num2 -> e2!!.setText(e2!!.text.toString() + "2")
 
-            R.id.num3 -> e2!!.setText(e2!!.text.toString() + "3")
+            R.id.btn_num3 -> e2!!.setText(e2!!.text.toString() + "3")
 
 
-            R.id.num4 -> e2!!.setText(e2!!.text.toString() + "4")
+            R.id.btn_num4 -> e2!!.setText(e2!!.text.toString() + "4")
 
-            R.id.num5 -> e2!!.setText(e2!!.text.toString() + "5")
+            R.id.btn_num5 -> e2!!.setText(e2!!.text.toString() + "5")
 
-            R.id.num6 -> e2!!.setText(e2!!.text.toString() + "6")
+            R.id.btn_num6 -> e2!!.setText(e2!!.text.toString() + "6")
 
-            R.id.num7 -> e2!!.setText(e2!!.text.toString() + "7")
+            R.id.btn_num7 -> e2!!.setText(e2!!.text.toString() + "7")
 
-            R.id.num8 -> e2!!.setText(e2!!.text.toString() + "8")
+            R.id.btn_num8 -> e2!!.setText(e2!!.text.toString() + "8")
 
-            R.id.num9 -> e2!!.setText(e2!!.text.toString() + "9")
+            R.id.btn_num9 -> e2!!.setText(e2!!.text.toString() + "9")
 
-            R.id.pi -> e2!!.setText(e2!!.text.toString() + "pi")
+            R.id.btn_pi -> e2!!.setText(e2!!.text.toString() + "pi")
 
-            R.id.dot -> if (count == 0 && e2!!.length() != 0) {
+            R.id.btn_dot -> if (count == 0 && e2!!.length() != 0) {
                 e2!!.setText(e2!!.text.toString() + ".")
                 count++
             }
 
-            R.id.clear -> {
+            R.id.btn_clear -> {
                 e1!!.setText("")
                 e2!!.setText("")
                 count = 0
                 expression = ""
             }
 
-            R.id.backSpace -> {
+            R.id.btn_back_space -> {
                 text = e2!!.text.toString()
                 if (text.isNotEmpty()) {
                     if (text.endsWith(".")) {
@@ -216,15 +217,15 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.plus -> operationClicked("+")
+            R.id.btn_plus -> operationClicked("+")
 
-            R.id.minus -> operationClicked("-")
+            R.id.btn_minus -> operationClicked("-")
 
-            R.id.divide -> operationClicked("/")
+            R.id.btn_divide -> operationClicked("/")
 
-            R.id.multiply -> operationClicked("*")
+            R.id.btn_multiply -> operationClicked("*")
 
-            R.id.sqrt -> if (e2!!.length() != 0) {
+            R.id.btn_sqrt -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 toggleMode = toggle!!.tag as Int
                 when (toggleMode) {
@@ -234,7 +235,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.square -> if (e2!!.length() != 0) {
+            R.id.btn_square -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (toggleMode == 2)
                     e2!!.setText("($text)^3")
@@ -242,7 +243,7 @@ class ScientificCal1 : AppCompatActivity() {
                     e2!!.setText("($text)^2")
             }
 
-            R.id.xpowy -> if (e2!!.length() != 0) {
+            R.id.btn_xpowy -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 when (toggleMode) {
                     1 -> e2!!.setText("($text)^")
@@ -251,7 +252,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.log -> if (e2!!.length() != 0) {
+            R.id.btn_log -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (toggleMode == 2)
                     e2!!.setText("ln($text)")
@@ -259,7 +260,7 @@ class ScientificCal1 : AppCompatActivity() {
                     e2!!.setText("log($text)")
             }
 
-            R.id.factorial -> if (e2!!.length() != 0) {
+            R.id.btn_factorial -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (toggleMode == 2) {
                     e1!!.setText("($text)%")
@@ -295,7 +296,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.sin -> if (e2!!.length() != 0) {
+            R.id.btn_sin -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
@@ -313,7 +314,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.cos -> if (e2!!.length() != 0) {
+            R.id.btn_cos -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
@@ -331,7 +332,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.tan -> if (e2!!.length() != 0) {
+            R.id.btn_tan -> if (e2!!.length() != 0) {
                 text = e2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
@@ -349,7 +350,7 @@ class ScientificCal1 : AppCompatActivity() {
                 }
             }
 
-            R.id.posneg -> if (e2!!.length() != 0) {
+            R.id.btn_posneg -> if (e2!!.length() != 0) {
                 val s = e2!!.text.toString()
                 val arr = s.toCharArray()
                 if (arr[0] == '-')
@@ -358,7 +359,7 @@ class ScientificCal1 : AppCompatActivity() {
                     e2!!.setText("-$s")
             }
 
-            R.id.equal -> {
+            R.id.btn_equal -> {
 
                 if (e2!!.length() != 0) {
                     text = e2!!.text.toString()

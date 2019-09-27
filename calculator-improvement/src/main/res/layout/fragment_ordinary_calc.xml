@@ -52,7 +52,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:visibility="gone"
+                android:visibility="visible"
                 >
 
             <com.google.android.material.button.MaterialButton
@@ -103,7 +103,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:visibility="gone"
+                android:visibility="visible"
                 >
 
             <com.google.android.material.button.MaterialButton
