@@ -14,21 +14,60 @@
             android:id="@+id/txt_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginRight="8dp"
             android:background="@drawable/outline_bg_component"
             android:textSize="40sp"
             android:gravity="right|center_vertical"
             android:scrollHorizontally="true"
             android:maxLines="1"
-            android:maxLength="16"
+            android:visibility="visible"
             app:autoSizeTextType="uniform"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RtlHardcoded"
             tools:text="1234567890123456"
-            />
+            tools:layout_editor_absoluteX="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/edt_result_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/outline_bg_component"
+            android:textSize="40sp"
+            android:gravity="right|center_vertical"
+            android:scrollHorizontally="true"
+            android:visibility="invisible"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="RtlHardcoded"
+            tools:text="1234567890123456"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/edt_result_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_bg_component"
+            android:textSize="40sp"
+            android:gravity="right|center_vertical"
+            android:scrollHorizontally="true"
+            android:maxLines="1"
+            app:autoSizeTextType="uniform"
+            tools:ignore="RtlHardcoded"
+            tools:text="1234567890123456"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/edt_result_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"/>
 
     <TableLayout
             android:layout_width="match_parent"
@@ -42,7 +81,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_result"
+            app:layout_constraintTop_toBottomOf="@+id/edt_result_2"
             >
 
 
@@ -52,8 +91,18 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:visibility="visible"
+                android:visibility="gone"
                 >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_exp"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="EXP"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="12sp"
+                    />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_deg"
@@ -63,6 +112,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -72,6 +122,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_sin"
+                    android:textSize="15sp"
                     android:textAllCaps="false"
                     />
 
@@ -97,14 +148,26 @@
 
         </TableRow>
 
+
         <TableRow
                 android:id="@+id/tbl_r_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:visibility="visible"
+                android:visibility="gone"
                 >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_factorial"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/factorial"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_kur_1"
@@ -113,6 +176,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -122,6 +186,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_kur_2"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -131,6 +196,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -139,7 +205,8 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="Z"
+                    android:text="RAD"
+                    android:textSize="13sp"
                     />
 
         </TableRow>
@@ -151,10 +218,21 @@
                 android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_natural_log"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/naturalLog"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_7"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/activity_main_calculator_7"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"/>
@@ -166,14 +244,14 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_8"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_9"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/activity_main_calculator_9"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
@@ -186,7 +264,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_slash"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
         </TableRow>
 
@@ -197,13 +275,23 @@
                 android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_sqrt"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/sqrt"
+                    android:textSize="15sp"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_4"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_4"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -213,7 +301,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_5"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -223,14 +311,14 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_6"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_multiply"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/fragment_ordinary_calc_multiply"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
@@ -244,13 +332,23 @@
                 android:gravity="center">
 
             <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_xpown"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/xpown"
+                    android:textSize="15sp"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_1"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_1"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -260,7 +358,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_2"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -270,7 +368,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/activity_main_calculator_3"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -280,7 +378,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_substract"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
         </TableRow>
 
@@ -288,7 +386,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:gravity="center">
+                android:gravity="center"
+                >
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_square"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/square"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:visibility="gone"/>
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_decimal"
@@ -297,7 +407,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_dot"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -307,7 +417,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_0"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -317,7 +427,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_ac"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
 
             <com.google.android.material.button.MaterialButton
@@ -327,7 +437,7 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_add"
-                    android:textSize="22sp"
+                    android:textSize="15sp"
                     />
         </TableRow>
 
@@ -337,8 +447,6 @@
                 android:layout_weight="1"
                 android:gravity="center">
 
-
-
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_science"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
@@ -346,18 +454,48 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     app:icon="@drawable/ic_zoom_out_map_black_24dp"
-                    app:iconSize="40dp"
                     app:iconGravity="textStart"
                     />
 
             <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_epown"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/epown"
+                    android:textSize="11sp"
+                    android:textAllCaps="false"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_phi"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:text="@string/pi"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_lnv"
+                    style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="lnv"
+                    android:textSize="8sp"
+                    android:visibility="gone"/>
+
+            <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_equal"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/fragment_ordinary_calc_equal"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     />
         </TableRow>
     </TableLayout>

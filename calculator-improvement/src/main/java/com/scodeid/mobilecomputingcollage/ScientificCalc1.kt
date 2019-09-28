@@ -22,30 +22,17 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_main_calc_science.*
 
 class ScientificCal1 : AppCompatActivity() {
 
-    private var e1: TextView? = null
-    private var e2: TextView? = null
     private var count = 0
     private var expression = ""
     private var text = ""
     private var result: Double? = 0.0
 //    private var dbHelper: DBHelper? = null
 
-    private var mode: Button? = null
-    private var toggle: Button? = null
-    private var square: Button? = null
-    private var xpowy: Button? = null
-    private var log: Button? = null
-    private var sin: Button? = null
-    private var cos: Button? = null
-    private var tan: Button? = null
-    private var sqrt: Button? = null
-    private var fact: Button? = null
     private var toggleMode = 1
     private var angleMode = 1
 
@@ -55,117 +42,105 @@ class ScientificCal1 : AppCompatActivity() {
 //        val toolbar = findViewById<View>(R.id.toolbar) as Toolbar
 //        setSupportActionBar(toolbar)
 
-        e1 = findViewById<View>(R.id.edt_result_1) as TextView
-        e2 = findViewById<View>(R.id.edt_result_2) as TextView
-        mode = findViewById<View>(R.id.btn_mode) as Button
-        toggle = findViewById<View>(R.id.btn_toggle) as Button
-        square = findViewById<View>(R.id.btn_square) as Button
-        xpowy = findViewById<View>(R.id.btn_xpowy) as Button
-        log = findViewById<View>(R.id.btn_log) as Button
-        sin = findViewById<View>(R.id.btn_sin) as Button
-        cos = findViewById<View>(R.id.btn_cos) as Button
-        tan = findViewById<View>(R.id.btn_tan) as Button
-        sqrt = findViewById<View>(R.id.btn_sqrt) as Button
-        fact = findViewById<View>(R.id.btn_factorial) as Button
 
 //        dbHelper = DBHelper(this)
 
-        e2!!.text = "0"
+        edt_result_2!!.text = "0"
 
-        //tags to change the mode from degree to radian and vice versa
-        mode!!.tag = 1
+        //tags to change the btn_mode from degree to radian and vice versa
+        btn_mode!!.tag = 1
         //tags to change the names of the buttons performing different operations
-        toggle!!.tag = 1
+        btn_toggle!!.tag = 1
     }
 
     @SuppressLint("SetTextI18n")
     fun onClick(v: View) {
-        toggleMode = toggle!!.tag as Int
-        angleMode = mode!!.tag as Int
+        toggleMode = btn_toggle!!.tag as Int
+        angleMode = btn_mode!!.tag as Int
         when (v.id) {
 
             R.id.btn_toggle ->
                 //change the button text if switch button is clicked
                 when (toggleMode) {
                     1 -> {
-                        toggle!!.tag = 2
-                        square!!.setText(R.string.cube)
-                        xpowy!!.setText(R.string.tenpow)
-                        log!!.setText(R.string.naturalLog)
-                        sin!!.setText(R.string.sininv)
-                        cos!!.setText(R.string.cosinv)
-                        tan!!.setText(R.string.taninv)
-                        sqrt!!.setText(R.string.cuberoot)
-                        fact!!.setText(R.string.Mod)
+                        btn_toggle!!.tag = 2
+                        btn_square!!.setText(R.string.cube)
+                        btn_xpowy!!.setText(R.string.tenpow)
+                        btn_log!!.setText(R.string.naturalLog)
+                        btn_sin!!.setText(R.string.sininv)
+                        btn_cos!!.setText(R.string.cosinv)
+                        btn_tan!!.setText(R.string.taninv)
+                        btn_sqrt!!.setText(R.string.cuberoot)
+                        btn_factorial!!.setText(R.string.Mod)
                     }
                     2 -> {
-                        toggle!!.tag = 3
-                        square!!.setText(R.string.square)
-                        xpowy!!.setText(R.string.epown)
-                        log!!.setText(R.string.log)
-                        sin!!.setText(R.string.hyperbolicSine)
-                        cos!!.setText(R.string.hyperbolicCosine)
-                        tan!!.setText(R.string.hyperbolicTan)
-                        sqrt!!.setText(R.string.inverse)
-                        fact!!.setText(R.string.factorial)
+                        btn_toggle!!.tag = 3
+                        btn_square!!.setText(R.string.square)
+                        btn_xpowy!!.setText(R.string.epown)
+                        btn_log!!.setText(R.string.log)
+                        btn_sin!!.setText(R.string.hyperbolicSine)
+                        btn_cos!!.setText(R.string.hyperbolicCosine)
+                        btn_tan!!.setText(R.string.hyperbolicTan)
+                        btn_sqrt!!.setText(R.string.inverse)
+                        btn_factorial!!.setText(R.string.factorial)
                     }
                     3 -> {
-                        toggle!!.tag = 1
-                        sin!!.setText(R.string.sin)
-                        cos!!.setText(R.string.cos)
-                        tan!!.setText(R.string.tan)
-                        sqrt!!.setText(R.string.sqrt)
-                        xpowy!!.setText(R.string.xpown)
+                        btn_toggle!!.tag = 1
+                        btn_sin!!.setText(R.string.sin)
+                        btn_cos!!.setText(R.string.cos)
+                        btn_tan!!.setText(R.string.tan)
+                        btn_sqrt!!.setText(R.string.sqrt)
+                        btn_xpowy!!.setText(R.string.xpown)
                     }
                 }
 
             R.id.btn_mode ->
-                //change the angle property for trignometric operations if mode button is clicked
+                //change the angle property for trignometric operations if btn_mode button is clicked
                 if (angleMode == 1) {
-                    mode!!.tag = 2
-                    mode!!.setText(R.string.mode2)
+                    btn_mode!!.tag = 2
+                    btn_mode!!.setText(R.string.mode2)
                 } else {
-                    mode!!.tag = 1
-                    mode!!.setText(R.string.mode1)
+                    btn_mode!!.tag = 1
+                    btn_mode!!.setText(R.string.mode1)
                 }
 
-            R.id.btn_num0 -> e2!!.setText(e2!!.text.toString() + "0")
+            R.id.btn_num0 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "0"
 
-            R.id.btn_num1 -> e2!!.setText(e2!!.text.toString() + "1")
+            R.id.btn_num1 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "1"
 
-            R.id.btn_num2 -> e2!!.setText(e2!!.text.toString() + "2")
+            R.id.btn_num2 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "2"
 
-            R.id.btn_num3 -> e2!!.setText(e2!!.text.toString() + "3")
+            R.id.btn_num3 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "3"
 
 
-            R.id.btn_num4 -> e2!!.setText(e2!!.text.toString() + "4")
+            R.id.btn_num4 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "4"
 
-            R.id.btn_num5 -> e2!!.setText(e2!!.text.toString() + "5")
+            R.id.btn_num5 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "5"
 
-            R.id.btn_num6 -> e2!!.setText(e2!!.text.toString() + "6")
+            R.id.btn_num6 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "6"
 
-            R.id.btn_num7 -> e2!!.setText(e2!!.text.toString() + "7")
+            R.id.btn_num7 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "7"
 
-            R.id.btn_num8 -> e2!!.setText(e2!!.text.toString() + "8")
+            R.id.btn_num8 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "8"
 
-            R.id.btn_num9 -> e2!!.setText(e2!!.text.toString() + "9")
+            R.id.btn_num9 -> edt_result_2!!.text = edt_result_2!!.text.toString() + "9"
 
-            R.id.btn_pi -> e2!!.setText(e2!!.text.toString() + "pi")
+            R.id.btn_pi -> edt_result_2!!.text = edt_result_2!!.text.toString() + "pi"
 
-            R.id.btn_dot -> if (count == 0 && e2!!.length() != 0) {
-                e2!!.setText(e2!!.text.toString() + ".")
+            R.id.btn_dot -> if (count == 0 && edt_result_2!!.length() != 0) {
+                edt_result_2!!.text = edt_result_2!!.text.toString() + "."
                 count++
             }
 
             R.id.btn_clear -> {
-                e1!!.setText("")
-                e2!!.setText("")
+                edt_result_1!!.text = ""
+                edt_result_2!!.text = ""
                 count = 0
                 expression = ""
             }
 
             R.id.btn_back_space -> {
-                text = e2!!.text.toString()
+                text = edt_result_2!!.text.toString()
                 if (text.isNotEmpty()) {
                     if (text.endsWith(".")) {
                         count = 0
@@ -193,8 +168,8 @@ class ScientificCal1 : AppCompatActivity() {
                         }
                         newText = text.substring(0, pos)
                     }
-                    //if e2 edit text contains only - sign or sqrt or any other text functions
-                    // at last then clear the edit text e2
+                    //if edt_result_2 edit text contains only - sign or btn_sqrt or any other text functions
+                    // at last then clear the edit text edt_result_2
                     if (newText == "-" || newText.endsWith("sqrt") || newText.endsWith("log") || newText.endsWith("ln")
                         || newText.endsWith("sin") || newText.endsWith("asin") || newText.endsWith("asind") || newText.endsWith(
                             "sinh"
@@ -213,7 +188,7 @@ class ScientificCal1 : AppCompatActivity() {
                     else if (newText.endsWith("pi") || newText.endsWith("e^"))
                         newText =
                             newText.substring(0, newText.length - 2)//if pow sign is left at the last or divide sign
-                    e2!!.setText(newText)
+                    edt_result_2!!.text = newText
                 }
             }
 
@@ -225,46 +200,47 @@ class ScientificCal1 : AppCompatActivity() {
 
             R.id.btn_multiply -> operationClicked("*")
 
-            R.id.btn_sqrt -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
-                toggleMode = toggle!!.tag as Int
+            R.id.btn_sqrt -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
+                toggleMode = btn_toggle!!.tag as Int
                 when (toggleMode) {
-                    1 -> e2!!.setText("sqrt($text)")
-                    2 -> e2!!.setText("cbrt($text)")
-                    else -> e2!!.setText("1/($text)")
+                    1 -> edt_result_2!!.text = "sqrt($text)"
+                    2 -> edt_result_2!!.text = "cbrt($text)"
+                    else -> edt_result_2!!.text = "1/($text)"
                 }
             }
 
-            R.id.btn_square -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_square -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (toggleMode == 2)
-                    e2!!.setText("($text)^3")
+                    edt_result_2!!.text = "($text)^3"
                 else
-                    e2!!.setText("($text)^2")
+                    edt_result_2!!.setText("($text)^2")
             }
 
-            R.id.btn_xpowy -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_xpowy -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 when (toggleMode) {
-                    1 -> e2!!.setText("($text)^")
-                    2 -> e2!!.setText("10^($text)")
-                    else -> e2!!.setText("e^($text)")
+                    1 -> edt_result_2!!.setText("($text)^")
+                    2 -> edt_result_2!!.setText("10^($text)")
+                    else -> edt_result_2!!.setText("e^($text)")
                 }
             }
 
-            R.id.btn_log -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_log -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (toggleMode == 2)
-                    e2!!.setText("ln($text)")
+                    edt_result_2!!.setText("ln($text)")
                 else
-                    e2!!.setText("log($text)")
+                    edt_result_2!!.setText("log($text)")
             }
 
-            R.id.btn_factorial -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_factorial -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (toggleMode == 2) {
-                    e1!!.setText("($text)%")
-                    e2!!.setText("")
+                    edt_result_1!!.text = "($text)%"
+                    val percent = (text.toInt() / 100)
+                    edt_result_2!!.text = "$percent"
                 } else {
                     var res = ""
                     try {
@@ -284,88 +260,88 @@ class ScientificCal1 : AppCompatActivity() {
                                 res += arr[i]
                             }
                         }
-                        e2!!.setText(res)
+                        edt_result_2!!.setText(res)
                     } catch (e: Exception) {
                         if (e.toString().contains("ArrayIndexOutOfBoundsException")) {
-                            e2!!.setText("Result too big!")
+                            edt_result_2!!.setText("Result too big!")
                         } else
-                            e2!!.setText("Invalid!!")
+                            edt_result_2!!.setText("Invalid!!")
                         e.printStackTrace()
                     }
 
                 }
             }
 
-            R.id.btn_sin -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_sin -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
                     when (toggleMode) {
-                        1 -> e2!!.setText("sin($angle)")
-                        2 -> e2!!.setText("asind($text)")
-                        else -> e2!!.setText("sinh($text)")
+                        1 -> edt_result_2!!.setText("sin($angle)")
+                        2 -> edt_result_2!!.setText("asind($text)")
+                        else -> edt_result_2!!.setText("sinh($text)")
                     }
                 } else {
                     when (toggleMode) {
-                        1 -> e2!!.setText("sin($text)")
-                        2 -> e2!!.setText("asin($text)")
-                        else -> e2!!.setText("sinh($text)")
+                        1 -> edt_result_2!!.setText("sin($text)")
+                        2 -> edt_result_2!!.setText("asin($text)")
+                        else -> edt_result_2!!.setText("sinh($text)")
                     }
                 }
             }
 
-            R.id.btn_cos -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_cos -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
                     when (toggleMode) {
-                        1 -> e2!!.setText("cos($angle)")
-                        2 -> e2!!.setText("acosd($text)")
-                        else -> e2!!.setText("cosh($text)")
+                        1 -> edt_result_2!!.setText("cos($angle)")
+                        2 -> edt_result_2!!.setText("acosd($text)")
+                        else -> edt_result_2!!.setText("cosh($text)")
                     }
                 } else {
                     when (toggleMode) {
-                        1 -> e2!!.setText("cos($text)")
-                        2 -> e2!!.setText("acos($text)")
-                        else -> e2!!.setText("cosh($text)")
+                        1 -> edt_result_2!!.setText("cos($text)")
+                        2 -> edt_result_2!!.setText("acos($text)")
+                        else -> edt_result_2!!.setText("cosh($text)")
                     }
                 }
             }
 
-            R.id.btn_tan -> if (e2!!.length() != 0) {
-                text = e2!!.text.toString()
+            R.id.btn_tan -> if (edt_result_2!!.length() != 0) {
+                text = edt_result_2!!.text.toString()
                 if (angleMode == 1) {
                     val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
                     when (toggleMode) {
-                        1 -> e2!!.setText("tan($angle)")
-                        2 -> e2!!.setText("atand($text)")
-                        else -> e2!!.setText("tanh($text)")
+                        1 -> edt_result_2!!.text = "tan($angle)"
+                        2 -> edt_result_2!!.text = "atand($text)"
+                        else -> edt_result_2!!.text = "tanh($text)"
                     }
                 } else {
                     when (toggleMode) {
-                        1 -> e2!!.setText("tan($text)")
-                        2 -> e2!!.setText("atan($text)")
-                        else -> e2!!.setText("tanh($text)")
+                        1 -> edt_result_2!!.text = "tan($text)"
+                        2 -> edt_result_2!!.text = "atan($text)"
+                        else -> edt_result_2!!.text = "tanh($text)"
                     }
                 }
             }
 
-            R.id.btn_posneg -> if (e2!!.length() != 0) {
-                val s = e2!!.text.toString()
+            R.id.btn_posneg -> if (edt_result_2!!.length() != 0) {
+                val s = edt_result_2!!.text.toString()
                 val arr = s.toCharArray()
                 if (arr[0] == '-')
-                    e2!!.setText(s.substring(1, s.length))
+                    edt_result_2!!.setText(s.substring(1, s.length))
                 else
-                    e2!!.setText("-$s")
+                    edt_result_2!!.setText("-$s")
             }
 
             R.id.btn_equal -> {
 
-                if (e2!!.length() != 0) {
-                    text = e2!!.text.toString()
-                    expression = e1!!.text.toString() + text
+                if (edt_result_2!!.length() != 0) {
+                    text = edt_result_2!!.text.toString()
+                    expression = edt_result_1!!.text.toString() + text
                 }
-                e1!!.setText("")
+                edt_result_1!!.setText("")
                 if (expression.isEmpty())
                     expression = "0.0"
                 try {
@@ -375,45 +351,45 @@ class ScientificCal1 : AppCompatActivity() {
                     when {
                         result.toString() == "6.123233995736766E-17" -> {
                             result = 0.0
-                            e2!!.setText(result!!.toString() + "")
+                            edt_result_2!!.setText(result!!.toString() + "")
                         }
-                        result.toString() == "1.633123935319537E16" -> e2!!.setText("infinity")
-                        else -> e2!!.setText(result!!.toString() + "")
+                        result.toString() == "1.633123935319537E16" -> edt_result_2!!.setText("infinity")
+                        else -> edt_result_2!!.setText(result!!.toString() + "")
                     }
                     if (expression != "0.0")
 //                        dbHelper!!.insert("SCIENTIFIC", "$expression = $result")
                         Log.d("RESULT","del helper")
                 } catch (e: Exception) {
-                    e2!!.setText("Invalid Expression")
-                    e1!!.setText("")
+                    edt_result_2!!.setText("Invalid Expression")
+                    edt_result_1!!.setText("")
                     expression = ""
                     e.printStackTrace()
                 }
 
             }
 
-//            R.id.openBracket -> e1!!.setText(e1!!.text.toString() + "(")
+//            R.id.openBracket -> edt_result_1!!.setText(edt_result_1!!.text.toString() + "(")
 //
-//            R.id.closeBracket -> if (e2!!.length() != 0)
-//                e1!!.setText(e1!!.text.toString() + e2!!.text.toString() + ")")
+//            R.id.closeBracket -> if (edt_result_2!!.length() != 0)
+//                edt_result_1!!.setText(edt_result_1!!.text.toString() + edt_result_2!!.text.toString() + ")")
 //            else
-//                e1!!.setText(e1!!.text.toString() + ")")
+//                edt_result_1!!.setText(edt_result_1!!.text.toString() + ")")
 
         }
     }
 
     @SuppressLint("SetTextI18n")
     private fun operationClicked(op: String) {
-        if (e2!!.length() != 0) {
-            val text = e2!!.text.toString()
-            e1!!.setText(e1!!.text.toString() + text + op)
-            e2!!.setText("")
+        if (edt_result_2!!.length() != 0) {
+            val text = edt_result_2!!.text.toString()
+            edt_result_1!!.setText(edt_result_1!!.text.toString() + text + op)
+            edt_result_2!!.setText("")
             count = 0
         } else {
-            val text = e1!!.text.toString()
+            val text = edt_result_1!!.text.toString()
             if (text.isNotEmpty()) {
                 val newText = text.substring(0, text.length - 1) + op
-                e1!!.setText(newText)
+                edt_result_1!!.setText(newText)
             }
         }
     }
