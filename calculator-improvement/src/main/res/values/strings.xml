@@ -28,7 +28,7 @@
     <string name="log">log</string>
     <string name="Mod">%</string>
     <string name="inverse">1/x</string>
-    <string name="factorial" >x!</string>>
+    <string name="factorial">x!</string>>
 
     <string name="openBracket">(</string>
     <string name="closeBracket">)</string>
@@ -55,5 +55,8 @@
     <string name="fragment_ordinary_calc_deg">DEG</string>
     <string name="main_menu_life">Life</string>
     <string name="main_menu_calculator">Calculator</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

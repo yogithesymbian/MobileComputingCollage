@@ -3,6 +3,7 @@ package com.scodeid.mobilecomputingcollage.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.scodeid.mobilecomputingcollage.CalcFinanceFragment
 import com.scodeid.mobilecomputingcollage.CalculatorFragment
 import com.scodeid.mobilecomputingcollage.CalcLifeModeFragment
 
@@ -33,19 +34,23 @@ class MainSectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) 
             1 -> {
                 CalcLifeModeFragment()
             }
+            2 -> {
+                CalcFinanceFragment()
+            }
             else -> CalculatorFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 2
+        return 3
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         when(position)
         {
             0 -> return "ORDINARY_CALCULATOR"
-            1 -> return "ORDINARY_CALCULATOR_1_1"
+            1 -> return "ORDINARY_CALCULATOR_1"
+            2 -> return "ORDINARY_CALCULATOR_2"
         }
         return null
     }
