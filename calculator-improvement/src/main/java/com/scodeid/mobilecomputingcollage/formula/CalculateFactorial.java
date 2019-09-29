@@ -1,7 +1,8 @@
-package com.scodeid.mobilecomputingcollage;
+package com.scodeid.mobilecomputingcollage.formula;
 
 /**
  * Created by Anubhav on 14-03-2016.
+ * Re-Create by yogithesymbian 29-09-2019
  */
 public class CalculateFactorial
 {
@@ -10,7 +11,7 @@ public class CalculateFactorial
     private int res_size;
     private int[] res = new int[MAX];
 
-    CalculateFactorial()
+    public CalculateFactorial()
     {
         res_size = 1;
     }

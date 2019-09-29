@@ -16,11 +16,8 @@
     <string name="menu_send">Send</string>
 
 
-    <string name="title_activity_history">History</string>
-    <string name="deleteHistory">Delete History</string>
-    <string name="mode1">Degree</string>
-    <string name="mode2">Radian</string>
-    <string name="toggle">SWITCH</string>
+    <string name="mode1">DEG</string>
+    <string name="mode2">RAD</string>
     <string name="sin">sin</string>
     <string name="cos">cos</string>
     <string name="tan">tan</string>
@@ -54,5 +51,9 @@
     <string name="epown">eⁿ</string>
     <string name="pi">π</string>
     <string name="ordinary_calc_fragment_factorial_invalid">Invalid?</string>
+    <string name="fragment_ordinary_calc_rad">RAD</string>
+    <string name="fragment_ordinary_calc_deg">DEG</string>
+    <string name="main_menu_life">Life</string>
+    <string name="main_menu_calculator">Calculator</string>
 
 </resources>

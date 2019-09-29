@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.scodeid.common.debug
+import com.scodeid.mobilecomputingcollage.formula.CalculateFactorial
+import com.scodeid.mobilecomputingcollage.formula.ExtendedDoubleEvaluator
+
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.*
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_2
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.*
@@ -58,7 +61,11 @@ class OrdinaryCalcFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val inflate = inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
+
+        // DEGREE AND RADIAN
+        inflate.btn_deg.tag = 1
         inflate.apply {
+
 
             // ORDINARY
             this.btn_9.setOnClickListener { onDigit(it) }
@@ -121,23 +128,39 @@ class OrdinaryCalcFragment : Fragment() {
             }
             this.btn_natural_log.setOnClickListener {
                 text = this.edt_result_2?.text.toString()
-                this.edt_result_2!!.text = "ln($text)"
+                this.edt_result_2?.text = "ln($text)"
             }
             this.btn_sqrt.setOnClickListener {
                 text = this.edt_result_2?.text.toString()
-                this.edt_result_2!!.text = "sqrt($text)"
+                this.edt_result_2?.text = "sqrt($text)"
             }
             this.btn_xpown.setOnClickListener {
                 text = this.edt_result_2?.text.toString()
-                this.edt_result_2!!.text = "($text)^"
+                this.edt_result_2?.text = "($text)^"
             }
             this.btn_square.setOnClickListener {
                 text = this.edt_result_2?.text.toString()
-                this.edt_result_2!!.text = "($text)^2"
+                this.edt_result_2?.text = "($text)^2"
             }
             this.btn_inv.setOnClickListener {
                 text = this.edt_result_2?.text.toString()
-                this.edt_result_2!!.text = "inv($text)"
+                this.edt_result_2?.text = "inv($text)"
+            }
+
+
+            this.btn_deg.setOnClickListener {
+
+                angleMode = this.btn_deg?.tag as Int
+                if (angleMode == 1) {
+                    this.btn_deg?.tag = 2
+                    this.btn_deg?.setText(R.string.mode2)
+                } else {
+                    this.btn_deg?.tag = 1
+                    this.btn_deg?.setText(R.string.mode1)
+                }
+            }
+            this.btn_back_space.setOnClickListener {
+                backSpaceClearTxt()
             }
 
             this.btn_science.setOnClickListener {
@@ -188,8 +211,61 @@ class OrdinaryCalcFragment : Fragment() {
         return inflate
     }
 
-    private fun factorialOpr() {
+    private fun backSpaceClearTxt() {
         text = edt_result_2!!.text.toString()
+        if (text.isNotEmpty()) {
+            if (text.endsWith(".")) {
+                count = 0
+            }
+            var newText = text.substring(0, text.length - 1)
+            //to delete the data contained in the brackets at once
+            if (text.endsWith(")")) {
+                val a = text.toCharArray()
+                var pos = a.size - 2
+                var counter = 1
+                //to find the opening bracket position
+                for (i in a.size - 2 downTo 0) {
+                    when {
+                        a[i] == ')' -> counter++
+                        a[i] == '(' -> counter--
+                        a[i] == '.' -> count = 0
+                    }//if decimal is deleted b/w brackets then count should be zero
+                    //if opening bracket pair for the last bracket is found
+                    //if decimal is deleted b/w brackets then count should be zero
+                    //if opening bracket pair for the last bracket is found
+                    if (counter == 0) {
+                        pos = i
+                        break
+                    }
+                }
+                newText = text.substring(0, pos)
+            }
+            //if edt_result_2 edit text contains only - sign or btn_sqrt or any other text functions
+            // at last then clear the edit text edt_result_2
+            if (newText == "-" || newText.endsWith("sqrt") || newText.endsWith("log") || newText.endsWith("ln")
+                || newText.endsWith("sin") || newText.endsWith("asin") || newText.endsWith("asind") || newText.endsWith(
+                    "sinh"
+                )
+                || newText.endsWith("cos") || newText.endsWith("acos") || newText.endsWith("acosd") || newText.endsWith(
+                    "cosh"
+                )
+                || newText.endsWith("tan") || newText.endsWith("atan") || newText.endsWith("atand") || newText.endsWith(
+                    "tanh"
+                )
+                || newText.endsWith("cbrt")
+            ) {
+                newText = ""
+            } else if (newText.endsWith("^") || newText.endsWith("/"))
+                newText = newText.substring(0, newText.length - 1)
+            else if (newText.endsWith("pi") || newText.endsWith("e^"))
+                newText =
+                    newText.substring(0, newText.length - 2)//if pow sign is left at the last or divide sign
+            edt_result_2!!.text = newText
+        }
+    }
+
+    private fun factorialOpr() {
+        text = edt_result_2?.text.toString()
         var res = ""
         try {
             val cf = CalculateFactorial()

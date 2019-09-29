@@ -36,4 +36,6 @@
     <string name="ordinary_calc_fragment_error">Error</string>
     <string name="fragment_ordinary_calc_inv">Inv</string>
     <string name="ordinary_calc_fragment_factorial_big">Result too big!</string>
+    <string name="fragment_ordinary_calc_tan">Tan</string>
+    <string name="main_menu_finance">Finance</string>
 </resources>

@@ -10,10 +10,15 @@
 
     <item
             android:id="@+id/action_ordinary"
-            android:title="@string/menu_main_calc_ordinary"
-            app:showAsAction="ifRoom"/>
+            android:title="@string/main_menu_calculator"
+            app:showAsAction="always"/>
     <item
             android:id="@+id/action_science"
-            android:title="@string/menu_main_calc_science"
-            app:showAsAction="ifRoom"/>
+            android:title="@string/main_menu_life"
+            app:showAsAction="always"/>
+
+    <item
+            android:id="@+id/action_f"
+            android:title="@string/main_menu_finance"
+            app:showAsAction="always"/>
 </menu>

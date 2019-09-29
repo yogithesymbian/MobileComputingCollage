@@ -45,7 +45,7 @@ class SectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
         when(position)
         {
             0 -> return "ORDINARY_CALCULATOR"
-            1 -> return "ORDINARY_CALCULATOR"
+            1 -> return "ORDINARY_CALCULATOR_1"
         }
         return null
     }
