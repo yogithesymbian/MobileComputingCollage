@@ -3,8 +3,8 @@ package com.scodeid.mobilecomputingcollage.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.scodeid.mobilecomputingcollage.OrdinaryCalcFragment
-import com.scodeid.mobilecomputingcollage.ScienceCalcFragment
+import com.scodeid.mobilecomputingcollage.CalculatorFragment
+import com.scodeid.mobilecomputingcollage.CalcLifeModeFragment
 
 /**
  * @author
@@ -23,17 +23,17 @@ Linux 5.2.0-kali2-amd64
  * ==============================================================
  */
 
-class SectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class MainSectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                OrdinaryCalcFragment()
+                CalculatorFragment()
             }
             1 -> {
-                ScienceCalcFragment()
+                CalcLifeModeFragment()
             }
-            else -> OrdinaryCalcFragment()
+            else -> CalculatorFragment()
         }
     }
 
