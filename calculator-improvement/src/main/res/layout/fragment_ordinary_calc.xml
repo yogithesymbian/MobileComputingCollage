@@ -95,9 +95,9 @@
                 >
 
             <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_exp"
+                    android:id="@+id/btn_back_space"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
-                    android:text="EXP"
+                    android:text="@string/backspace"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"

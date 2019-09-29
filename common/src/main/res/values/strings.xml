@@ -35,4 +35,5 @@
 
     <string name="ordinary_calc_fragment_error">Error</string>
     <string name="fragment_ordinary_calc_inv">Inv</string>
+    <string name="ordinary_calc_fragment_factorial_big">Result too big!</string>
 </resources>

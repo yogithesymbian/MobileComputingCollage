@@ -59,6 +59,7 @@ class OrdinaryCalcFragment : Fragment() {
         // Inflate the layout for this fragment
         val inflate = inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
         inflate.apply {
+
             // ORDINARY
             this.btn_9.setOnClickListener { onDigit(it) }
             this.btn_8.setOnClickListener { onDigit(it) }
@@ -112,7 +113,31 @@ class OrdinaryCalcFragment : Fragment() {
                 this.edt_result_2?.text = "e^($text)"
             }
             this.btn_phi.setOnClickListener{
+                text = this.edt_result_2?.text.toString()
                 this.edt_result_2?.text = this.edt_result_2?.text.toString() + "pi"
+            }
+            this.btn_factorial.setOnClickListener {
+                factorialOpr()
+            }
+            this.btn_natural_log.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2!!.text = "ln($text)"
+            }
+            this.btn_sqrt.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2!!.text = "sqrt($text)"
+            }
+            this.btn_xpown.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2!!.text = "($text)^"
+            }
+            this.btn_square.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2!!.text = "($text)^2"
+            }
+            this.btn_inv.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2!!.text = "inv($text)"
             }
 
             this.btn_science.setOnClickListener {
@@ -163,6 +188,36 @@ class OrdinaryCalcFragment : Fragment() {
         return inflate
     }
 
+    private fun factorialOpr() {
+        text = edt_result_2!!.text.toString()
+        var res = ""
+        try {
+            val cf = CalculateFactorial()
+            val arr =
+                cf.factorial(java.lang.Double.parseDouble(ExtendedDoubleEvaluator().evaluate(text).toString()).toInt())
+            val resSize = cf.res
+            if (resSize > 20) {
+                for (i in resSize - 1 downTo resSize - 20) {
+                    if (i == resSize - 2)
+                        res += "."
+                    res += arr[i]
+                }
+                res += "E" + (resSize - 1)
+            } else {
+                for (i in resSize - 1 downTo 0) {
+                    res += arr[i]
+                }
+            }
+            edt_result_2?.text = res
+        } catch (e: Exception) {
+            if (e.toString().contains("ArrayIndexOutOfBoundsException")) {
+                edt_result_2?.text = getString(R.string.ordinary_calc_fragment_factorial_big)
+            } else
+                edt_result_2?.text = getString(R.string.ordinary_calc_fragment_factorial_invalid)
+            e.printStackTrace()
+        }
+    }
+
     @SuppressLint("SetTextI18n")
     private fun tanOperation() {
         text = edt_result_2?.text.toString()
@@ -170,14 +225,14 @@ class OrdinaryCalcFragment : Fragment() {
             val angle = Math.toRadians(ExtendedDoubleEvaluator().evaluate(text))
             when (toggleMode) {
                 1 -> edt_result_2?.text = "tan($angle)"
-                2 -> edt_result_2?.text = "atand($text)"
-                else -> edt_result_2?.text = "tanh($text)"
+                2 -> edt_result_2?.text = "atand($text)" //later's
+                else -> edt_result_2?.text = "tanh($text)" //later's
             }
         } else {
             when (toggleMode) {
                 1 -> edt_result_2?.text = "tan($text)"
-                2 -> edt_result_2?.text = "atan($text)"
-                else -> edt_result_2?.text = "tanh($text)"
+                2 -> edt_result_2?.text = "atan($text)" //later's
+                else -> edt_result_2?.text = "tanh($text)" //later's
             }
         }
     }
@@ -222,6 +277,7 @@ class OrdinaryCalcFragment : Fragment() {
 
     /**
      * Append the Button.text to the TextView
+     * added state science mode
      */
     private fun onDigit(view: View) {
         if (STATE_SCIENCE) {
@@ -250,6 +306,7 @@ class OrdinaryCalcFragment : Fragment() {
 
     /**
      * Append . to the TextView
+     * added scientific state check mode
      */
     private fun onDecimalPoint() {
         if (lastNumeric && !stateError && !lastDot) {
@@ -263,6 +320,7 @@ class OrdinaryCalcFragment : Fragment() {
 
     /**
      * Append +,-,*,/ operators to the TextView
+     * add scientific mode and advance operation
      */
     private fun onOperator(view: View) {
         if (lastNumeric && !stateError) {
@@ -295,6 +353,7 @@ class OrdinaryCalcFragment : Fragment() {
 
     /**
      * Clear the TextView
+     * added scientific mode
      */
     private fun onClear() {
         if (STATE_SCIENCE){
@@ -310,23 +369,33 @@ class OrdinaryCalcFragment : Fragment() {
 
     /**
      * Calculate the output using Exp4j
+     * added scientific check state mode
      */
     @SuppressLint("SetTextI18n")
     private fun onEqual() {
+        debug(TAG_LOG,"onEqual has clicked")
         // If the current state is error, nothing to do.
         // If the last input is a number only, solution can be found.
-        if (lastNumeric && !stateError) {
+
             if (STATE_SCIENCE) {
                 if (edt_result_2?.length() != 0) {
                     text = edt_result_2?.text.toString()
                     expression = edt_result_1?.text.toString() + text
+                    debug(TAG_LOG,"""
+                        
+                        text = $text
+                        expression = $expression
+                    """.trimIndent())
                 }
                 edt_result_1?.text = ""
+                debug(TAG_LOG,"empty the edt_result_1")
                 if (expression.isEmpty())
                     expression = "0.0"
                 try {
+                    debug(TAG_LOG,"evaluate the expression in try and catch")
                     //evaluate the expression
                     result = ExtendedDoubleEvaluator().evaluate(expression)
+                    debug(TAG_LOG,"result = $result")
                     //insert expression and result in sqlite database if expression is valid and not 0.0
                     when {
                         result.toString() == "6.123233995736766E-17" -> {
@@ -338,31 +407,33 @@ class OrdinaryCalcFragment : Fragment() {
                     }
                     if (expression != "0.0")
 //                        dbHelper?.insert("SCIENTIFIC", "$expression = $result")
-                        Log.d("RESULT", "del helper")
+                        Log.d(TAG_LOG, "del helper")
                 } catch (e: Exception) {
                     edt_result_2?.text = "Invalid Expression"
                     edt_result_1?.text = ""
                     expression = ""
                     e.printStackTrace()
+                    debug(TAG_LOG, e.printStackTrace().toString())
                 }
             } else {
-                // Read the expression
-                val txt = txt_result.text.toString()
-                // Create an Expression (A class from exp4j library)
-                val expression = ExpressionBuilder(txt).build()
-                try {
-                    // Calculate the result and display
-                    val result = expression.evaluate()
-                    txt_result.text = result.toString()
-                    lastDot = true // Result contains a dot
-                } catch (ex: ArithmeticException) {
-                    // Display an error message
-                    txt_result.text = getString(R.string.ordinary_calc_fragment_error)
-                    stateError = true
-                    lastNumeric = false
+                if (lastNumeric && !stateError) {
+                    // Read the expression
+                    val txt = txt_result.text.toString()
+                    // Create an Expression (A class from exp4j library)
+                    val expression = ExpressionBuilder(txt).build()
+                    try {
+                        // Calculate the result and display
+                        val result = expression.evaluate()
+                        txt_result.text = result.toString()
+                        lastDot = true // Result contains a dot
+                    } catch (ex: ArithmeticException) {
+                        // Display an error message
+                        txt_result.text = getString(R.string.ordinary_calc_fragment_error)
+                        stateError = true
+                        lastNumeric = false
+                    }
                 }
             }
-        }
     }
 
 

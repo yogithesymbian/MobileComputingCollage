@@ -53,5 +53,6 @@
     <string name="xpown">xⁿ</string>
     <string name="epown">eⁿ</string>
     <string name="pi">π</string>
+    <string name="ordinary_calc_fragment_factorial_invalid">Invalid?</string>
 
 </resources>
