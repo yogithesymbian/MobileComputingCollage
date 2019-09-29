@@ -20,13 +20,13 @@
     <string name="fragment_ordinary_calc_ac">AC</string>
     <string name="fragment_ordinary_calc_add">+</string>
     <string name="fragment_ordinary_calc_equal">=</string>
-    <string name="fragment_ordinary_calc_log">log(</string>
+    <string name="fragment_ordinary_calc_log">log</string>
 
     <string name="fragment_ordinary_calc_kur_1">(</string>
     <string name="fragment_ordinary_calc_kur_2">)</string>
-    <string name="fragment_ordinary_calc_percent"> % </string>
-    <string name="fragment_ordinary_calc_sin">Sin(</string>
-    <string name="fragment_ordinary_calc_cos">Cos(</string>
+    <string name="fragment_ordinary_calc_percent">%</string>
+    <string name="fragment_ordinary_calc_sin">Sin</string>
+    <string name="fragment_ordinary_calc_cos">Cos</string>
 
     <string name="hello_blank_fragment">hello  world</string>
 

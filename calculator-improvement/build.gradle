@@ -24,6 +24,7 @@ android {
 }
 
 dependencies {
+    implementation files('libs/javaluator-3.0.1.jar')
     implementation project(path: ':common')
     // MY SET DEFAULT DEPENDENCY ANDROIDX ARTIFACT
     implementation fileTree(dir: 'libs', include: ['*.jar'])
