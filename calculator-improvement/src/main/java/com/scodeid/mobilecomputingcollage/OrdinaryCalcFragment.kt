@@ -90,9 +90,9 @@ class OrdinaryCalcFragment : Fragment() {
             }
 
             this.btn_percent.setOnClickListener {
-                val text = this.edt_result_2?.text.toString()
-                this.edt_result_1?.text = "($text)%"
-                val percent = (text.toInt() / 100)
+                val text = this.edt_result_2?.text.toString() //5
+                //this.edt_result_1?.text = "($text)%" // 5%
+                val percent = (text.toInt() / 100.0f)
                 this.edt_result_2?.text = "$percent"
             }
 
