@@ -21,8 +21,9 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.scodeid.mobilecomputingcollage.formula.CalculateFactorial
+import com.scodeid.mobilecomputingcollage.formula.ExtendedDoubleEvaluator
 import kotlinx.android.synthetic.main.activity_main_calc_science.*
 
 class ScientificCal1 : AppCompatActivity() {

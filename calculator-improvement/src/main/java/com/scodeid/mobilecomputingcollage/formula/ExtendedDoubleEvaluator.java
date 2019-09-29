@@ -1,7 +1,8 @@
-package com.scodeid.mobilecomputingcollage;
+package com.scodeid.mobilecomputingcollage.formula;
 
-/**
- * Created by Anubhav on 13-03-2016.
+/*
+  Created by Anubhav on 13-03-2016.
+  Re-Create by yogithesymbian 29-09-2019
  */
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;
