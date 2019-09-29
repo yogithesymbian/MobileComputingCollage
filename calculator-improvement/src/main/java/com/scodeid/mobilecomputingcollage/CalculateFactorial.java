@@ -5,10 +5,10 @@ package com.scodeid.mobilecomputingcollage;
  */
 public class CalculateFactorial
 {
-    public static final int MAX=1000;
+    private static final int MAX=1000;//private
 
     private int res_size;
-    private int res[]=new int[MAX];
+    private int[] res = new int[MAX];
 
     CalculateFactorial()
     {

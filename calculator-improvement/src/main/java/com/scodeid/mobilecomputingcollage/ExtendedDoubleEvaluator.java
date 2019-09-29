@@ -1,7 +1,7 @@
 package com.scodeid.mobilecomputingcollage;
 
-/**
- * Created by Anubhav on 13-03-2016.
+/*
+  Created by Anubhav on 13-03-2016.
  */
 
 import com.fathzer.soft.javaluator.DoubleEvaluator;

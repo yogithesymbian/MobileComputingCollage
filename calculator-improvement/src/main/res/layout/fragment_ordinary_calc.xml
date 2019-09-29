@@ -105,7 +105,7 @@
                     />
 
             <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_deg"
+                    android:id="@+id/btn_log"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:text="@string/fragment_ordinary_calc_log"
                     android:textAllCaps="false"
@@ -479,14 +479,15 @@
                     android:visibility="gone"/>
 
             <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_lnv"
+                    android:id="@+id/btn_inv"
                     style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
-                    android:text="lnv"
+                    android:text="@string/fragment_ordinary_calc_inv"
                     android:textSize="8sp"
-                    android:visibility="gone"/>
+                    android:visibility="gone"
+                    tools:ignore="SmallSp"/>
 
             <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_equal"

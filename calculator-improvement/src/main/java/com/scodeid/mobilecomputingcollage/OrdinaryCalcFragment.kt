@@ -1,6 +1,5 @@
 package com.scodeid.mobilecomputingcollage
 
-
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
@@ -11,11 +10,22 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.scodeid.common.debug
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.*
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_1
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_2
 import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.*
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_1
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_clear
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_cos
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_divide
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_equal
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_log
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_multiply
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_sin
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_sqrt
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_square
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_tan
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.edt_result_1
+import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.edt_result_2
 import net.objecthunter.exp4j.ExpressionBuilder
-
 
 class OrdinaryCalcFragment : Fragment() {
 
@@ -49,7 +59,6 @@ class OrdinaryCalcFragment : Fragment() {
         // Inflate the layout for this fragment
         val inflate = inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
         inflate.apply {
-
             // ORDINARY
             this.btn_9.setOnClickListener { onDigit(it) }
             this.btn_8.setOnClickListener { onDigit(it) }
@@ -62,8 +71,6 @@ class OrdinaryCalcFragment : Fragment() {
             this.btn_1.setOnClickListener { onDigit(it) }
             this.btn_zero.setOnClickListener { onDigit(it) }
 
-
-
             this.btn_decimal.setOnClickListener { onDecimalPoint() }
 
             this.btn_divide.setOnClickListener { onOperator(it) }
@@ -73,7 +80,6 @@ class OrdinaryCalcFragment : Fragment() {
 
             this.btn_clear.setOnClickListener { onClear() }
             this.btn_equal.setOnClickListener { onEqual() }
-
 
             // SCIENCE
             this.btn_kur_1.setOnClickListener { onDigit(it) }
@@ -90,10 +96,23 @@ class OrdinaryCalcFragment : Fragment() {
             }
 
             this.btn_percent.setOnClickListener {
-                val text = this.edt_result_2?.text.toString() //5
+                text = this.edt_result_2?.text.toString() //5
                 //this.edt_result_1?.text = "($text)%" // 5%
                 val percent = (text.toInt() / 100.0f)
                 this.edt_result_2?.text = "$percent"
+            }
+            this.btn_log.setOnClickListener{
+                text = edt_result_2?.text.toString()
+                this.edt_result_2?.text = "log($text)"
+                debug(TAG_LOG,"$it")
+            }
+            // bottom
+            this.btn_epown.setOnClickListener {
+                text = this.edt_result_2?.text.toString()
+                this.edt_result_2?.text = "e^($text)"
+            }
+            this.btn_phi.setOnClickListener{
+                this.edt_result_2?.text = this.edt_result_2?.text.toString() + "pi"
             }
 
             this.btn_science.setOnClickListener {
@@ -108,10 +127,9 @@ class OrdinaryCalcFragment : Fragment() {
                     inflate.edt_result_1.visibility = View.INVISIBLE
                     inflate.edt_result_2.visibility = View.GONE
 
-
                     inflate.btn_epown.visibility = View.GONE
                     inflate.btn_phi.visibility = View.GONE
-                    inflate.btn_lnv.visibility = View.GONE
+                    inflate.btn_inv.visibility = View.GONE
 
                     inflate.btn_square.visibility = View.GONE
                     inflate.btn_xpown.visibility = View.GONE
@@ -131,7 +149,7 @@ class OrdinaryCalcFragment : Fragment() {
 
                     inflate.btn_epown.visibility = View.VISIBLE
                     inflate.btn_phi.visibility = View.VISIBLE
-                    inflate.btn_lnv.visibility = View.VISIBLE
+                    inflate.btn_inv.visibility = View.VISIBLE
 
                     inflate.btn_square.visibility = View.VISIBLE
                     inflate.btn_sqrt.visibility = View.VISIBLE

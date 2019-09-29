@@ -34,4 +34,5 @@
     <string name="menu_main_calc_science">Science</string>
 
     <string name="ordinary_calc_fragment_error">Error</string>
+    <string name="fragment_ordinary_calc_inv">Inv</string>
 </resources>
