@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              tools:context=".MainActivity"
+              android:orientation="vertical"
+              android:weightSum="2"
+        >
+    <!-- Image Slider -->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#bababa"/>
+
+        <ViewFlipper
+                android:id="@+id/Flipper"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp">
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_background_kamus"
+                    android:scaleType="fitXY"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_profile_syahdan"
+                    android:scaleType="fitXY"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_profile_yogi"
+                    android:scaleType="fitXY"/>
+
+        </ViewFlipper>
+    </RelativeLayout>
+    <!-- Button -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:orientation="vertical"
+            android:weightSum="2">
+        <!-- Button Atas -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/img_terjemahan"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_ic_translate"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:src="@drawable/ic_g_translate_white_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="@string/activity_main_terjemahan"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/img_terjemahan"
+                            app:layout_constraintEnd_toEndOf="@+id/img_terjemahan"
+                            app:layout_constraintStart_toStartOf="@+id/img_terjemahan"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/terjemahanView_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_icon_translate_1"
+                            android:layout_width="65dp"
+                            android:layout_height="65dp"
+                            android:src="@drawable/ic_translate_black_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="@string/activity_main_kosakata"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/terjemahanView_1"
+                            app:layout_constraintEnd_toEndOf="@+id/terjemahanView_1"
+                            app:layout_constraintStart_toStartOf="@+id/terjemahanView_1"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/terjemahanView_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_icon_translate_2"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:src="@drawable/ic_add_to_photos_white_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="@string/activity_main_tambah_kata"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/terjemahanView_2"
+                            app:layout_constraintEnd_toEndOf="@+id/terjemahanView_2"
+                            app:layout_constraintStart_toStartOf="@+id/terjemahanView_2"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- Button Bawah -->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/terjemahanView_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_icon_translate"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/ic_help_outline_white_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginRight="4dp"
+                            android:layout_marginEnd="4dp"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="Bantuan"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/terjemahanView_8"
+                            app:layout_constraintEnd_toEndOf="@+id/terjemahanView_8"
+                            app:layout_constraintStart_toStartOf="@+id/terjemahanView_8"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/terjemahanView_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_icon_translate_5"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/ic_person_white_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="Developer"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/terjemahanView_5"
+                            app:layout_constraintEnd_toEndOf="@+id/terjemahanView_5"
+                            app:layout_constraintStart_toStartOf="@+id/terjemahanView_5"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/terjemahanView_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_circle_with_bg"
+                            android:layout_margin="25dp"
+                            tools:layout_editor_absoluteY="25dp"
+                            tools:layout_editor_absoluteX="25dp"/>
+
+                    <ImageView
+                            android:id="@+id/img_icon_translate_4"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/ic_power_settings_new_black_24dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <TextView
+                            android:id="@+id/txt_terjemahan_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"
+                            android:text="Keluar"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toBottomOf="@+id/terjemahanView_4"
+                            app:layout_constraintEnd_toEndOf="@+id/terjemahanView_4"
+                            app:layout_constraintStart_toStartOf="@+id/terjemahanView_4"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

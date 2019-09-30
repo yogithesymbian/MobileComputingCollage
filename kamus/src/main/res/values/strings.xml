@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Kamus</string>
+    <string name="activity_main_terjemahan">Terjemahan</string>
+    <string name="activity_terjemahan_keterangan">keterangan</string>
+    <string name="activity_terjemahan_ctds">header of kamus</string>
+    <string name="activity_main_kosakata">Kosakata</string>
+    <string name="activity_main_tambah_kata">Tambah Kata</string>
+</resources>
