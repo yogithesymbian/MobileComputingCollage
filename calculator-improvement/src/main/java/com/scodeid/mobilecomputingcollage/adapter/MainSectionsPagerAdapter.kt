@@ -3,8 +3,9 @@ package com.scodeid.mobilecomputingcollage.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.scodeid.mobilecomputingcollage.OrdinaryCalcFragment
-import com.scodeid.mobilecomputingcollage.ScienceCalcFragment
+import com.scodeid.mobilecomputingcollage.CalcFinanceFragment
+import com.scodeid.mobilecomputingcollage.CalculatorFragment
+import com.scodeid.mobilecomputingcollage.CalcLifeModeFragment
 
 /**
  * @author
@@ -23,29 +24,33 @@ Linux 5.2.0-kali2-amd64
  * ==============================================================
  */
 
-class SectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class MainSectionsPagerAdapter (fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> {
-                OrdinaryCalcFragment()
+                CalculatorFragment()
             }
             1 -> {
-                ScienceCalcFragment()
+                CalcLifeModeFragment()
             }
-            else -> OrdinaryCalcFragment()
+            2 -> {
+                CalcFinanceFragment()
+            }
+            else -> CalculatorFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 2
+        return 3
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
         when(position)
         {
             0 -> return "ORDINARY_CALCULATOR"
-            1 -> return "ORDINARY_CALCULATOR_1_1"
+            1 -> return "ORDINARY_CALCULATOR_1"
+            2 -> return "ORDINARY_CALCULATOR_2"
         }
         return null
     }

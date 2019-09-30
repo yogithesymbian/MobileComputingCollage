@@ -12,29 +12,29 @@ import com.scodeid.common.debug
 import com.scodeid.mobilecomputingcollage.formula.CalculateFactorial
 import com.scodeid.mobilecomputingcollage.formula.ExtendedDoubleEvaluator
 
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.*
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_2
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.*
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.edt_result_1
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_clear
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_cos
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_divide
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_equal
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_log
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_multiply
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_sin
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_sqrt
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_square
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.btn_tan
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.edt_result_1
-import kotlinx.android.synthetic.main.fragment_ordinary_calc.view.edt_result_2
+import kotlinx.android.synthetic.main.fragment_calculator.*
+import kotlinx.android.synthetic.main.fragment_calculator.edt_result_2
+import kotlinx.android.synthetic.main.fragment_calculator.view.*
+import kotlinx.android.synthetic.main.fragment_calculator.edt_result_1
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_clear
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_cos
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_divide
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_equal
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_log
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_multiply
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_sin
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_sqrt
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_square
+import kotlinx.android.synthetic.main.fragment_calculator.view.btn_tan
+import kotlinx.android.synthetic.main.fragment_calculator.view.edt_result_1
+import kotlinx.android.synthetic.main.fragment_calculator.view.edt_result_2
 import net.objecthunter.exp4j.ExpressionBuilder
 
-class OrdinaryCalcFragment : Fragment() {
+class CalculatorFragment : Fragment() {
 
 
     companion object {
-        val TAG_LOG = OrdinaryCalcFragment::class.java.simpleName
+        val TAG_LOG = CalculatorFragment::class.java.simpleName
         // Represent whether the lastly pressed key is numeric or not
         var lastNumeric: Boolean = false
 
@@ -60,7 +60,7 @@ class OrdinaryCalcFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val inflate = inflater.inflate(R.layout.fragment_ordinary_calc, container, false)
+        val inflate = inflater.inflate(R.layout.fragment_calculator, container, false)
 
         // DEGREE AND RADIAN
         inflate.btn_deg.tag = 1

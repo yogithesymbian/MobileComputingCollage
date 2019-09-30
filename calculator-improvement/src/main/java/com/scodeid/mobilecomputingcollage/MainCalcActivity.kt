@@ -6,11 +6,11 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
-import com.scodeid.mobilecomputingcollage.adapter.SectionsPagerAdapter
+import com.scodeid.mobilecomputingcollage.adapter.MainSectionsPagerAdapter
 import kotlinx.android.synthetic.main.activity_main_calc_content.*
 
 class MainCalcActivity : AppCompatActivity() {
-    private var sectionsPagerAdapter: SectionsPagerAdapter? = null
+    private var mainSectionsPagerAdapter: MainSectionsPagerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,8 +28,8 @@ class MainCalcActivity : AppCompatActivity() {
         /**
          * SET VIEW PAGER ADAPTER
          */
-        sectionsPagerAdapter = SectionsPagerAdapter(supportFragmentManager)
-        container_main_calc.adapter = sectionsPagerAdapter
+        mainSectionsPagerAdapter = MainSectionsPagerAdapter(supportFragmentManager)
+        container_main_calc.adapter = mainSectionsPagerAdapter
         /**
          * END OF SET VIEW PAGER ADAPTER
          */
