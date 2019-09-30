@@ -1,0 +1,4 @@
+#Mon Sep 30 12:02:46 MYT 2019
+base.0=/root/AndroidStudioProjects/MobileComputingCollage/kamus/build/intermediates/dex/debug/mergeDexDebug/out
+path.0=classes.dex
+renamed.0=classes.dex
