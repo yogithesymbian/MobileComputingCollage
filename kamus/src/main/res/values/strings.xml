@@ -5,4 +5,11 @@
     <string name="activity_terjemahan_ctds">header of kamus</string>
     <string name="activity_main_kosakata">Kosakata</string>
     <string name="activity_main_tambah_kata">Tambah Kata</string>
+    <string name="activity_main_bottom_content_terjemahkan">Terjemahkan</string>
+    <string name="activity_main_bottom_content_bantuan">Bantuan</string>
+    <string name="activity_main_bottom_content_developer">Developer</string>
+    <string name="activity_main_bottom_content_keluar">Keluar</string>
+    <string name="terjemahan_activity_indonesia">Terjemahkan</string>
+    <string name="terjemahan_activity_spanyol">Traducir</string>
+    <string name="terjemahan_activity_balinese">Balinese</string>
 </resources>
