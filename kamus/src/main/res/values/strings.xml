@@ -12,4 +12,10 @@
     <string name="terjemahan_activity_indonesia">Terjemahkan</string>
     <string name="terjemahan_activity_spanyol">Traducir</string>
     <string name="terjemahan_activity_balinese">Balinese</string>
+    <string name="terjemahan_activity_frm_indonesia">From Indonesia</string>
+    <string name="terjemahan_activity_to_spanyol">to Spanyol</string>
+    <string name="terjemahan_activity_to_bali">to Bali</string>
+    <string name="terjemahan_activity_to_indonesia">to Indonesia</string>
+    <string name="terjemahan_activity_frm_spanyol">From Spanyol</string>
+    <string name="terjemahan_activity_frm_bali">from Bali</string>
 </resources>

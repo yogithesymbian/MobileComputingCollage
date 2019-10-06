@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.google.android.material.textfield.TextInputLayout;
 import com.scodeid.kamus.helper.DatabaseHelper;
 
 public class TerjemahanActivity extends AppCompatActivity {
@@ -18,6 +19,7 @@ public class TerjemahanActivity extends AppCompatActivity {
     private EditText textSpanyol;
     private EditText textIndonesia;
     private EditText textBali;
+    private TextInputLayout textFromLayout, textTo1, textTo2;
     DatabaseHelper databaseHelper = null;
 
     public static final String SPANYOL = "spanyol";
@@ -44,11 +46,20 @@ public class TerjemahanActivity extends AppCompatActivity {
         Button btnBaliState = findViewById(R.id.btn_frm_bali);
         final Button btnTerjemah = findViewById(R.id.btn_terjemahkan);
 
+        textFromLayout = findViewById(R.id.txt_layout_from);
+        textTo1 = findViewById(R.id.txt_layout_spanyol);
+        textTo2 = findViewById(R.id.txt_layout_bali);
+
         btnIndoState.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 translateFrom = INDONESIA;
                 btnTerjemah.setText(R.string.terjemahan_activity_indonesia);
+
+                textFromLayout.setHint(getString(R.string.terjemahan_activity_frm_indonesia));
+                textTo1.setHint(getString(R.string.terjemahan_activity_to_spanyol));
+                textTo2.setHint(getString(R.string.terjemahan_activity_to_bali));
+
                 Log.d(TAG_LOG,"1. Translate From" + translateFrom);
                 //visible | change position | hint text field from -> to result , later's
             }
@@ -58,6 +69,11 @@ public class TerjemahanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 translateFrom = SPANYOL;
                 btnTerjemah.setText(R.string.terjemahan_activity_spanyol);
+
+                textFromLayout.setHint(getString(R.string.terjemahan_activity_to_indonesia));
+                textTo1.setHint(getString(R.string.terjemahan_activity_frm_spanyol));
+                textTo2.setHint(getString(R.string.terjemahan_activity_to_bali));
+
                 Log.d(TAG_LOG,"2. Translate From" + translateFrom);
                 //visible | change position | hint text field from -> to result , later's
             }
@@ -67,6 +83,11 @@ public class TerjemahanActivity extends AppCompatActivity {
             public void onClick(View v) {
                 translateFrom = BALI;
                 btnTerjemah.setText(R.string.terjemahan_activity_balinese);
+
+                textFromLayout.setHint(getString(R.string.terjemahan_activity_to_indonesia));
+                textTo1.setHint(getString(R.string.terjemahan_activity_to_spanyol));
+                textTo2.setHint(getString(R.string.terjemahan_activity_frm_bali));
+
                 Log.d(TAG_LOG,"3. Translate From" + translateFrom);
                 //visible | change position | hint text field from -> to result , later's
             }
@@ -109,8 +130,11 @@ public class TerjemahanActivity extends AppCompatActivity {
             }
 
             private void letsTranslate(String fieldFrom, String valueTranslate, String index3, String index2, int stateFrom) {
-                kamusCursor = sqLiteDatabase.rawQuery("SELECT _ID, INDONESIA, SPANYOL, BALI " + " FROM kamus WHERE "+ fieldFrom +"= '"+ valueTranslate +"' ORDER BY INDONESIA",null);
-
+                kamusCursor = sqLiteDatabase.rawQuery(
+                        "SELECT _ID, INDONESIA, SPANYOL, BALI " +
+                                " FROM kamus " +
+                                " WHERE "+ fieldFrom +"= '"+ valueTranslate +"' " +
+                                " ORDER BY INDONESIA",null);
                 if (stateFrom == 1){
                     if (kamusCursor.moveToFirst()){
                         for(; !kamusCursor.isAfterLast(); kamusCursor.moveToNext()){
