@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Kamus</string>
+    <string name="activity_main_terjemahan">Terjemahan</string>
+    <string name="activity_terjemahan_keterangan">keterangan</string>
+    <string name="activity_terjemahan_ctds">header of kamus</string>
+    <string name="activity_main_kosakata">Kosakata</string>
+    <string name="activity_main_tambah_kata">Tambah Kata</string>
+    <string name="activity_main_bottom_content_terjemahkan">Terjemahkan</string>
+    <string name="activity_main_bottom_content_bantuan">Bantuan</string>
+    <string name="activity_main_bottom_content_developer">Developer</string>
+    <string name="activity_main_bottom_content_keluar">Keluar</string>
+    <string name="terjemahan_activity_indonesia">Terjemahkan</string>
+    <string name="terjemahan_activity_spanyol">Traducir</string>
+    <string name="terjemahan_activity_balinese">Balinese</string>
+    <string name="terjemahan_activity_frm_indonesia">From Indonesia</string>
+    <string name="terjemahan_activity_to_spanyol">to Spanyol</string>
+    <string name="terjemahan_activity_to_bali">to Bali</string>
+    <string name="terjemahan_activity_to_indonesia">to Indonesia</string>
+    <string name="terjemahan_activity_frm_spanyol">From Spanyol</string>
+    <string name="terjemahan_activity_frm_bali">from Bali</string>
+</resources>
