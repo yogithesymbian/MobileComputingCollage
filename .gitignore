@@ -5,9 +5,13 @@
 /.idea/libraries
 /.idea/modules.xml
 /.idea/workspace.xml
-/.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
 /build
-/captures
-.externalNativeBuild
+calculator/libs/
+calculator/src/main/res/drawable-hdpi/
+calculator/src/main/res/drawable-mdpi/
+calculator/src/main/res/drawable-v21/
+calculator/src/main/res/drawable-xhdpi/
+calculator/src/main/res/drawable-xxhdpi/
+calculator/src/main/res/drawable-xxxhdpi/
+common/libs/

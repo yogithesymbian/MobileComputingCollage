@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 29
@@ -37,4 +39,7 @@ dependencies {
 
     // CALCULATOR
     implementation 'net.objecthunter:exp4j:0.4.4'
+}
+repositories {
+    mavenCentral()
 }

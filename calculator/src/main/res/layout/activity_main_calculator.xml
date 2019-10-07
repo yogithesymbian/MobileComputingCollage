@@ -126,7 +126,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnMultiply"
-                    android:text="*"
+                    android:text="@string/fragment_ordinary_calc_multiply"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
         </LinearLayout>
@@ -176,7 +176,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnSubtract"
-                    android:text="-"
+                    android:text="@string/fragment_ordinary_calc_substract"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
         </LinearLayout>
@@ -193,7 +193,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnDot"
-                    android:text="."
+                    android:text="@string/fragment_ordinary_calc_dot"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
 
@@ -215,7 +215,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnClear"
-                    android:text="C"
+                    android:text="@string/fragment_ordinary_calc_ac"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
 
@@ -226,7 +226,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnAdd"
-                    android:text="+"
+                    android:text="@string/fragment_ordinary_calc_add"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
         </LinearLayout>
@@ -243,7 +243,7 @@
                     android:layout_weight="1"
                     android:textSize="30sp"
                     android:id="@+id/btnEqual"
-                    android:text="="
+                    android:text="@string/fragment_ordinary_calc_equal"
                     tools:ignore="ButtonStyle,NestedWeights"
                     />
 
